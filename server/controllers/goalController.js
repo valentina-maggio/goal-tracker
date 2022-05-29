@@ -9,7 +9,7 @@ const getGoals = asyncHandler(async (req, res) => {
   res.status(200).json(goals);
 });
 
-// Set goals
+// Set goal
 const setGoal = asyncHandler(async (req, res) => {
   if(!req.body.text) {
     res.status(400)
@@ -23,7 +23,7 @@ const setGoal = asyncHandler(async (req, res) => {
   res.status(200).json(goal);
 });
 
-// Update goals
+// Update goal
 const updateGoal = asyncHandler(async (req, res) => {
   const goal = await Goal.findById(req.params.id);
 
@@ -39,9 +39,18 @@ const updateGoal = asyncHandler(async (req, res) => {
   res.status(200).json(updatedGoal);
 });
 
-// Delete goals
+// Delete goal
 const deleteGoal = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: `Delete goal ${req.params.id}` });
+  const goal = await Goal.findById(req.params.id);
+
+  if(!goal) {
+    res.status(400)
+    throw new Error('Goal not found');
+  }
+
+  await goal.remove();
+
+  res.status(200).json({ id: req.params.id });
 });
 
 
