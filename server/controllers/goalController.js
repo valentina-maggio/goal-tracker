@@ -5,6 +5,11 @@ const getGoals = (req, res) => {
 
 // Set goals
 const setGoal = (req, res) => {
+  if(!req.body.text) {
+    res.status(400)
+    throw new Error('Please add text field');
+  }
+
   res.status(200).json({ message: 'Set goals' });
 };
 
