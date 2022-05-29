@@ -4,7 +4,9 @@ const Goal = require('../models/goalModel');
 
 // Get goals
 const getGoals = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: 'Get goals' });
+  const goals = await Goal.find();
+
+  res.status(200).json(goals);
 });
 
 // Set goals
