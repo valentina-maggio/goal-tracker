@@ -21,7 +21,7 @@ const deleteGoal = (req, res) => {
 
 module.exports = {
   getGoals,
-  setGoals,
-  updateGoals,
-  deleteGoals,
+  setGoal,
+  updateGoal,
+  deleteGoal,
 }
