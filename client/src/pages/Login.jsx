@@ -24,7 +24,7 @@ function Login() {
     <>
       <section className='heading'>
         <h1>
-          <FaSignInAlt/> Register
+          <FaSignInAlt/> Login
         </h1>
         <p>Login and start setting goals</p>
       </section>
