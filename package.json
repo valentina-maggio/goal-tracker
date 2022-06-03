@@ -1,6 +1,9 @@
 {
   "name": "goal-tracker",
   "version": "1.0.0",
+  "engines": {
+    "node": "17.8.0"
+  },
   "description": "Goal tracker app",
   "main": "server.js",
   "scripts": {
